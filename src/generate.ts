@@ -135,7 +135,7 @@ async function generateIconVariant(
   variant: 'outlined' | 'filled' | 'rounded' | 'sharp' | 'twotone',
   iconList?: { name: string; link: string }[]
 ) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 
   try {
     if (!iconList) {
